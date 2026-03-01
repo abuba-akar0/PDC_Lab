@@ -1,0 +1,19 @@
+# JetBrains IDEs
+.idea/
+
+# CMake Build Directory
+cmake-build-debug/
+
+# Executables and Binaries
+*.exe
+*.obj
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+
+# Output and temporary files from tasks
+PDC_Lab/Lab01/Task01/output.txt
+PDC_Lab/Lab01/Task01/io.exe
+

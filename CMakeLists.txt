@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 4.1)
+cmake_minimum_required(VERSION 3.10)
 project(PDC_Lab C)
 
 set(CMAKE_C_STANDARD 11)
+
+find_package(OpenMP REQUIRED)
 
 add_executable(Task01 PDC_Lab/Lab01/Task01/InputOutput.c)
 add_executable(Task02 PDC_Lab/Lab01/Task02/MatrixMult.c)
@@ -12,3 +14,14 @@ add_executable(Task07 PDC_Lab/Lab03/Task01/ParallelCountWithoutMutex.c
 add_executable(Task08 PDC_Lab/Lab03/Task02/AccountSimulMutex.c)
 add_executable(Task05 PDC_Lab/Lab04/Task01/ProdConsVar.c)
 add_executable(Task06 PDC_Lab/Lab04/Task02/TrafficLightVarSimulate.c)
+add_executable(Task09 PDC_Lab/Lab05/Task01/parallelArrayOpenMP.c)
+add_executable(Task10 PDC_Lab/Lab05/Task02/matrixMultVectorOpenMP.c)
+if(OpenMP_C_FOUND)
+    set_target_properties(Task09 PROPERTIES COMPILE_FLAGS "${OpenMP_C_FLAGS}")
+    set_target_properties(Task09 PROPERTIES LINK_FLAGS "${OpenMP_C_FLAGS}")
+    target_link_libraries(Task09 PRIVATE ${OpenMP_C_LIBRARIES})
+    set_target_properties(Task10 PROPERTIES COMPILE_FLAGS "${OpenMP_C_FLAGS}")
+    set_target_properties(Task10 PROPERTIES LINK_FLAGS "${OpenMP_C_FLAGS}")
+    target_link_libraries(Task10 PRIVATE ${OpenMP_C_LIBRARIES})
+endif()
+

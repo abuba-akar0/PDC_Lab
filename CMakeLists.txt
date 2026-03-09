@@ -24,4 +24,4 @@ if(OpenMP_C_FOUND)
     set_target_properties(Task10 PROPERTIES LINK_FLAGS "${OpenMP_C_FLAGS}")
     target_link_libraries(Task10 PRIVATE ${OpenMP_C_LIBRARIES})
 endif()
-
+add_executable(Task11 PDC_Lab/Assignment01/primeArrayPthreads.c)

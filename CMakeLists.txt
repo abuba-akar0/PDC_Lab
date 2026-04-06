@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
-project(PDC_Lab C)
+project(PDC_Lab C CXX)
 
 set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 11)
 
 find_package(OpenMP REQUIRED)
 
@@ -28,3 +29,4 @@ add_executable(Task11 PDC_Lab/Assignment01/primeArrayPthreads.c)
 add_executable(Task12 PDC_Lab/Lab06/Activity/Scenerio_01/bank.c)
 add_executable(Task13 PDC_Lab/Lab06/Activity/Scenerio_02/kitchen.c)
 add_executable(Task14 PDC_Lab/Lab06/Activity/Scenerio_03/matrix.c)
+add_executable(Task15 PDC_Lab/Lab09/Task/ShiftRedParser.cpp)
